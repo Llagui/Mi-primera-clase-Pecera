@@ -2,11 +2,13 @@ public class Pecera{
     int litrosEnPecera;
     String    propietearioDePecera;
     boolean    conPeces;
+    int cont;
 
     public Pecera(int capacidad, String propietario){
         litrosEnPecera = capacidad;
         propietearioDePecera = propietario;
         conPeces = true;
+        cont = 1;
     }
 
     public String getPropietearioDePecera(){
@@ -32,7 +34,6 @@ public class Pecera{
      * Pulsa una vez al inicio y otro al terminar el cambio de agua
      */
     public void cambioDeAgua(){
-        int cont = 0;
         if(cont % 2 == 0) {
             conPeces = false;
             cont = cont + 1;
