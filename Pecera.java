@@ -6,33 +6,43 @@ public class Pecera{
     public Pecera(int capacidad, String propietario){
         litrosEnPecera = capacidad;
         propietearioDePecera = propietario;
-        conPeces = false;
+        conPeces = true;
     }
-    
+
     public String getPropietearioDePecera(){
         return propietearioDePecera;
     }
-    
+
     public int getLitrosEnPecera(){
         return litrosEnPecera;
     }
-    
+
     public boolean getConPeces(){
         return conPeces;
     }
-    
+
     public void setPropietario(String nuevoPropietario){
         propietearioDePecera = nuevoPropietario;
     }
-    
+
     public void echarAgua(int numeroLitros){
         litrosEnPecera = litrosEnPecera + numeroLitros;
     }
-    
-    public void cambioDeAgua(boolean seTermino){
-        conPeces = seTermino;
+    /*
+     * Pulsa una vez al inicio y otro al terminar el cambio de agua
+     */
+    public void cambioDeAgua(){
+        int cont = 0;
+        if(cont % 2 == 0) {
+            conPeces = false;
+            cont = cont + 1;
+        }
+        else{
+            conPeces = true;
+            cont = cont + 1;
+        }
     }
-    
+
     public void imprimeDetalles(){
         System.out.println("Propietario: " + propietearioDePecera + " |Litros en la pecera " + litrosEnPecera + " |Tiene peces " +conPeces );
     }
@@ -40,5 +50,5 @@ public class Pecera{
     public String imprimeDetalle(){
         return("Propietario: " + propietearioDePecera + " |Litros en la pecera " + litrosEnPecera + " |Tiene peces " +conPeces );
     }
-    
+
 }
